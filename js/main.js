@@ -10,6 +10,7 @@ const gameBoxNode = document.querySelector("#game-box");
 // * STATE MANAGEMENT FUNCTIONS
 function startGame() {
 
+    
     console.log("iniciando el juego")
 
     startScreenNode.style.display = "none";
