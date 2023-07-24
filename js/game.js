@@ -1,4 +1,3 @@
-console.log("desde main.js")
 
 class Game {
     
