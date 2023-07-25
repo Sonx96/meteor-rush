@@ -5,7 +5,7 @@ const startScreenNode = document.querySelector("#start-screen");
 const gameScreenNode = document.querySelector("#game-screen");
 const gameBoxNode = document.querySelector("#game-box");
 
-
+let gameObj = null;
 
 // * STATE MANAGEMENT FUNCTIONS
 function startGame() {
@@ -16,7 +16,7 @@ function startGame() {
     startScreenNode.style.display = "none";
     gameScreenNode.style.display = "flex";
 
-    let gameObj = new Game();
+    gameObj = new Game();
     console.log(gameObj);
 
     gameObj.gameLoop()
@@ -29,6 +29,11 @@ function startGame() {
 // * ADD EVENT LISTENERS
 
 startBtnNode.addEventListener("click", startGame);
-gameBoxNode.addEventListener("click", () => {
-    console.log("click")
+window.addEventListener("keydown", (event) => {
+    if(event.key === "ArrowRight"){
+        gameObj.nave.moveEffectRight();
+    } else if(event.key === "ArrowLeft"){
+        gameObj.nave.moveEffectLeft();
+
+    }
 })
