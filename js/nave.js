@@ -7,8 +7,8 @@ class Nave {
     //propiedades nave
     this.x = 240; //posicion eje X
     this.y = 270; //posicion eje Y
-    this.w = 150; //ancho
-    this.h = 150; //alto
+    this.w = 100; //ancho
+    this.h = 100; //alto
 
     this.moveXSpeed = 20;
     this.moveYSpeed = 20;
