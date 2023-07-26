@@ -5,10 +5,10 @@ class Nave {
     gameBoxNode.append(this.node);
 
     //propiedades nave
-    this.x = 240; //posicion eje X
-    this.y = 270; //posicion eje Y
-    this.w = 100; //ancho
-    this.h = 100; //alto
+    this.x = 270; //posicion eje X
+    this.y = 300; //posicion eje Y
+    this.w = 80; //ancho
+    this.h = 80; //alto
 
     this.moveXSpeed = 20;
     this.moveYSpeed = 20;
@@ -24,28 +24,28 @@ class Nave {
   //metodos nave
 
   moveEffectRight = () => {
-    if (this.x < 480) {
+    if (this.x < 500) {
       this.x += this.moveXSpeed;
       this.positionUpdateX();
     }
   };
 
   moveEffectLeft = () => {
-    if (this.x > -20) {
+    if (this.x > 20) {
       this.x -= this.moveXSpeed;
       this.positionUpdateX();
     }
   };
 
   moveEffectUp = () => {
-    if (this.y < 260) {
+    if (this.y < 300) {
       this.y += this.moveYSpeed;
       this.positionUpdateY();
     }
   };
 
   moveEffectDown = () => {
-    if (this.y > -10) {
+    if (this.y > 20) {
       this.y -= this.moveYSpeed;
       this.positionUpdateY();
     }

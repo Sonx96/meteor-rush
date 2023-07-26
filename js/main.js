@@ -32,6 +32,8 @@ function playAgain() {
   gameObj.gameLoop();
 }
 
+
+
 // * ADD EVENT LISTENERS
 
 startBtnNode.addEventListener("click", startGame);
@@ -45,7 +47,7 @@ window.addEventListener("keydown", (event) => {
       gameObj.nave.moveEffectLeft();
     } else if (event.key === "ArrowUp" || event.key === "w") {
       gameObj.nave.moveEffectDown();
-    } else if (event.key === "ArroDown" || event.key === "s") {
+    } else if (event.key === "ArrowDown" || event.key === "s") {
       gameObj.nave.moveEffectUp();
     }
   }

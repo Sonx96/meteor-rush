@@ -20,12 +20,12 @@ class Meteor {
   }
 
   //metodos meteor
-  automaticMov = () => {
+  automaticMeteorMov = () => {
     this.y += this.meteorSpeed;
-    this.positionUpdate();
+    this.positionMeteorUpdate();
   };
 
-  positionUpdate = () => {
+  positionMeteorUpdate = () => {
     this.node.style.top = `${this.y}px`;
   };
 }
