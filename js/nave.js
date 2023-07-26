@@ -1,43 +1,61 @@
-
 class Nave {
- 
-    constructor(){
+  constructor() {
+    this.node = document.createElement("img");
+    this.node.src = "./images/nave.png";
+    gameBoxNode.append(this.node);
 
-        this.node = document.createElement("img");
-        this.node.src = "./images/nave.png";
-        gameBoxNode.append(this.node);
+    //propiedades nave
+    this.x = 240; //posicion eje X
+    this.y = 270; //posicion eje Y
+    this.w = 150; //ancho
+    this.h = 150; //alto
 
-        //propiedades nave
-        this.x = 230; //posicion eje X
-        this.y = 250; //posicion eje Y
-        this.w = 150; //ancho
-        this.h = 150; //alto
+    this.moveXSpeed = 20;
+    this.moveYSpeed = 20;
 
-        this.moveRightSpeed = 5;
-        this.moveLeftSpeed = 5;
+    //ajustar tamaño y posicion
+    this.node.style.width = `${this.w}px`;
+    this.node.style.height = `${this.h}px`;
+    this.node.style.position = "absolute";
+    this.node.style.top = `${this.y}px`;
+    this.node.style.left = `${this.x}px`;
+  }
 
-        //ajustar tamño y posicion
-        this.node.style.width = `${this.w}px`;
-        this.node.style.height = `${this.h}px`;
-        this.node.style.position = "absolute";
-        this.node.style.top = `${this.y}px`;
-        this.node.style.left = `${this.x}px`;
- }
+  //metodos nave
 
-    //metodos nave
-
-    moveEffectRight = () => {
-        this.x += this.moveRightSpeed;
-        this.positionUpdate();
+  moveEffectRight = () => {
+    if (this.x < 480) {
+      this.x += this.moveXSpeed;
+      this.positionUpdateX();
     }
+  };
 
-    moveEffectLeft = () => {
-        this.x -= this.moveLeftSpeed;
-        this.positionUpdate();
+  moveEffectLeft = () => {
+    if (this.x > -20) {
+      this.x -= this.moveXSpeed;
+      this.positionUpdateX();
     }
+  };
 
-    positionUpdate = () => {
-        this.node.style.left = `${this.x}px`;
-        //la nave solo se mueve en el eje x;
+  moveEffectUp = () => {
+    if (this.y < 260) {
+      this.y += this.moveYSpeed;
+      this.positionUpdateY();
     }
+  };
+
+  moveEffectDown = () => {
+    if (this.y > -10) {
+      this.y -= this.moveYSpeed;
+      this.positionUpdateY();
+    }
+  };
+
+  positionUpdateX = () => {
+    this.node.style.left = `${this.x}px`;
+  };
+
+  positionUpdateY = () => {
+    this.node.style.top = `${this.y}px`;
+  };
 }
