@@ -9,7 +9,7 @@ class Meteor {
     this.w = 80;
     this.h = 80;
 
-    this.meteorSpeed = 4;
+    this.meteorSpeed = 3;
 
     this.node.style.width = `${this.w}px`;
     this.node.style.height = `${this.h}px`;

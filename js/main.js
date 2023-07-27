@@ -42,8 +42,6 @@ function homeScreen() {
   startScreenNode.style.display = "flex";
 }
 
-
-
 // * ADD EVENT LISTENERS
 
 startBtnNode.addEventListener("click", startGame);

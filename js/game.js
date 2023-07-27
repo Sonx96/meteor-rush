@@ -28,10 +28,10 @@ class Game {
   collisionNaveMeteor = () => {
     this.meteorArr.forEach((eachMeteor) => {
       if (
-        this.nave.x < eachMeteor.x + eachMeteor.w &&
-        this.nave.x + this.nave.w > eachMeteor.x &&
-        this.nave.y < eachMeteor.y + eachMeteor.h &&
-        this.nave.h + this.nave.y > eachMeteor.y
+        this.nave.x < eachMeteor.x -10 + eachMeteor.w &&
+        this.nave.x + this.nave.w -10 > eachMeteor.x &&
+        this.nave.y < eachMeteor.y -10 + eachMeteor.h &&
+        this.nave.h + this.nave.y -10 > eachMeteor.y
       ) {
         this.gameOver();
       }
@@ -55,10 +55,10 @@ class Game {
   collisionNaveFuel = () => {
     this.fuelArr.forEach((eachFuel) => {
       if (
-        this.nave.x < eachFuel.x + eachFuel.w &&
-        this.nave.x + this.nave.w > eachFuel.x &&
-        this.nave.y < eachFuel.y + eachFuel.h &&
-        this.nave.h + this.nave.y > eachFuel.y
+        this.nave.x < eachFuel.x -10 + eachFuel.w &&
+        this.nave.x + this.nave.w -10 > eachFuel.x &&
+        this.nave.y < eachFuel.y -10 + eachFuel.h &&
+        this.nave.h + this.nave.y -10 > eachFuel.y
       ) {
         this.fuelCount++;
         console.log(this.fuelCount);
@@ -71,7 +71,7 @@ class Game {
 
   updateFuelCounter = () => {
     fuelCounterNode.textContent = `Fuel: ${this.fuelCount}`;
-  }
+  };
 
   cometSpawn = () => {
     if (this.cometArr.length === 0) {
@@ -90,10 +90,10 @@ class Game {
   collisionNaveComet = () => {
     this.cometArr.forEach((eachComet) => {
       if (
-        this.nave.x < eachComet.x + eachComet.w &&
-        this.nave.x + this.nave.w > eachComet.x &&
-        this.nave.y < eachComet.y + eachComet.h &&
-        this.nave.h + this.nave.y > eachComet.y
+        this.nave.x < eachComet.x -10 + eachComet.w &&
+        this.nave.x + this.nave.w -10 > eachComet.x &&
+        this.nave.y < eachComet.y -10 + eachComet.h &&
+        this.nave.h + this.nave.y -10 > eachComet.y
       ) {
         this.gameOver();
       }
@@ -141,7 +141,7 @@ class Game {
 
     this.collisionNaveFuel();
 
-    if (this.fuelCount === 10) {
+    if (this.fuelCount === 3) {
       this.gameWin();
     }
 
@@ -149,7 +149,7 @@ class Game {
 
     this.cometArr.forEach((eachComet) => {
       eachComet.automaticFuelMov();
-    })
+    });
 
     this.cometDelete();
 
