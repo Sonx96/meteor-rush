@@ -28,10 +28,10 @@ class Game {
   collisionNaveMeteor = () => {
     this.meteorArr.forEach((eachMeteor) => {
       if (
-        this.nave.x < eachMeteor.x -10 + eachMeteor.w &&
-        this.nave.x + this.nave.w -10 > eachMeteor.x &&
-        this.nave.y < eachMeteor.y -10 + eachMeteor.h &&
-        this.nave.h + this.nave.y -10 > eachMeteor.y
+        this.nave.x < eachMeteor.x - 10 + eachMeteor.w &&
+        this.nave.x + this.nave.w - 10 > eachMeteor.x &&
+        this.nave.y < eachMeteor.y - 10 + eachMeteor.h &&
+        this.nave.h + this.nave.y - 10 > eachMeteor.y
       ) {
         this.gameOver();
       }
@@ -55,10 +55,10 @@ class Game {
   collisionNaveFuel = () => {
     this.fuelArr.forEach((eachFuel) => {
       if (
-        this.nave.x < eachFuel.x -10 + eachFuel.w &&
-        this.nave.x + this.nave.w -10 > eachFuel.x &&
-        this.nave.y < eachFuel.y -10 + eachFuel.h &&
-        this.nave.h + this.nave.y -10 > eachFuel.y
+        this.nave.x < eachFuel.x - 10 + eachFuel.w &&
+        this.nave.x + this.nave.w - 10 > eachFuel.x &&
+        this.nave.y < eachFuel.y - 10 + eachFuel.h &&
+        this.nave.h + this.nave.y - 10 > eachFuel.y
       ) {
         this.fuelCount++;
         console.log(this.fuelCount);
@@ -90,10 +90,10 @@ class Game {
   collisionNaveComet = () => {
     this.cometArr.forEach((eachComet) => {
       if (
-        this.nave.x < eachComet.x -10 + eachComet.w &&
-        this.nave.x + this.nave.w -10 > eachComet.x &&
-        this.nave.y < eachComet.y -10 + eachComet.h &&
-        this.nave.h + this.nave.y -10 > eachComet.y
+        this.nave.x < eachComet.x - 10 + eachComet.w &&
+        this.nave.x + this.nave.w - 10 > eachComet.x &&
+        this.nave.y < eachComet.y - 10 + eachComet.h &&
+        this.nave.h + this.nave.y - 10 > eachComet.y
       ) {
         this.gameOver();
       }
@@ -161,14 +161,3 @@ class Game {
   };
 }
 
-// planificación
-
-//PROPIEDADES
-//nave => posicion y tamaño
-//meteoritos => posicion y tamaño
-
-//METODOS
-//movimiento nave
-//movimiento meteoritos
-//colisiones
-//hueco aleatorio en fila meteoritos

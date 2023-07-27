@@ -4,24 +4,20 @@ class Nave {
     this.node.src = "./images/nave.png";
     gameBoxNode.append(this.node);
 
-    //propiedades nave
-    this.x = 270; //posicion eje X
-    this.y = 300; //posicion eje Y
-    this.w = 70; //ancho
-    this.h = 90; //alto
+    this.x = 270;
+    this.y = 300;
+    this.w = 70;
+    this.h = 90;
 
     this.moveXSpeed = 20;
     this.moveYSpeed = 20;
 
-    //ajustar tamaño y posicion
     this.node.style.width = `${this.w}px`;
     this.node.style.height = `${this.h}px`;
     this.node.style.position = "absolute";
     this.node.style.top = `${this.y}px`;
     this.node.style.left = `${this.x}px`;
   }
-
-  //metodos nave
 
   moveEffectRight = () => {
     if (this.x < 500) {

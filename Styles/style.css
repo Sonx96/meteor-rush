@@ -1,55 +1,59 @@
 body {
-    margin: 0;
-    background-color: black;
-    background-image: url("../images/bg.jpg");
-  }
+  margin: 0;
+  background-color: black;
+  background-image: url("../images/bg.jpg");
+}
 
-#start-btn, #restart-btn, #home-btn {
-    background-color: rgb(44, 44, 44);
-    color: rgb(8, 247, 255);
-    padding: 20px;
-    font-size: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
+#start-btn,
+#restart-btn,
+#home-btn {
+  background-color: rgb(44, 44, 44);
+  color: rgb(8, 247, 255);
+  padding: 20px;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
 }
 
 #game-box {
-    background-color: darkgray;
-    width: 600px;
-    height: 400px;
+  background-color: darkgray;
+  width: 600px;
+  height: 400px;
 
-    overflow: hidden;
-    position: relative;
-    user-select: none;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
 
-    background-image: url("../images/background.jpg");
-    background-position: center;
-    background-size: cover;
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 #fuel-counter {
-    position: absolute;
-    top: 20px;
-    left: 400px;
-    color: rgb(8, 247, 255);
-    padding: 5px 10px;
-    font-size: 18px;
-    border: 1px;
-    background-image: url("../images/background.jpg");
+  position: absolute;
+  top: 20px;
+  left: 400px;
+  color: rgb(8, 247, 255);
+  padding: 5px 10px;
+  font-size: 18px;
+  border: 1px;
+  background-image: url("../images/background.jpg");
 }
 
-#game-screen, #gameover-screen, #gamewin-screen {
-    display: none;
+#game-screen,
+#gameover-screen,
+#gamewin-screen {
+  display: none;
 }
 
 img {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }

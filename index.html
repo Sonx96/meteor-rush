@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>document</title>
-    <link rel="stylesheet" href="./Styles/style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./Styles/style.css" />
+  </head>
+  <body>
     <div id="start-screen" class="container">
-        <img src="./images/logo.png" width="800" height="150" alt="logo">
-        <img src="./images/mission.png" width="400" height="80" alt="mission">
-        <img src="./images/mtext.png" width="900" height="30" alt="mtext">
-        <img src="./images/controls.png" width="400" height="80" alt="controls">
-        <img src="./images/arrow.png" width="500" height="200" alt="controls">
-        <button id="start-btn">Start!</button>
+      <img src="./images/logo.png" width="800" height="150" alt="logo" />
+      <img src="./images/mission.png" width="400" height="80" alt="mission" />
+      <img src="./images/mtext.png" width="900" height="30" alt="mtext" />
+      <img src="./images/controls.png" width="400" height="80" alt="controls" />
+      <img src="./images/arrow.png" width="500" height="200" alt="controls" />
+      <button id="start-btn">Start!</button>
     </div>
 
-    
     <div id="game-screen" class="container">
-        <span id="fuel-counter">Fuel: 0</span>
-        <div id="game-box"></div>
+      <span id="fuel-counter">Fuel: 0</span>
+      <div id="game-box"></div>
     </div>
 
     <div id="gameover-screen" class="container">
-        <img src="./images/gameover.png" width="500" height="150" alt="gameover">
-        <button id="restart-btn">Play again!</button>
+      <img
+        src="./images/gameover.png"
+        width="500"
+        height="150"
+        alt="gameover"
+      />
+      <button id="restart-btn">Play again!</button>
     </div>
 
     <div id="gamewin-screen" class="container">
-        <img src="./images/win.png" width="400" height="150" alt="win">
-        <button id="home-btn">Home screen</button>
+      <img src="./images/win.png" width="400" height="150" alt="win" />
+      <img src="./images/wintext.png" width="900" height="50" alt="wintext" />
+      <button id="home-btn">Home screen</button>
     </div>
 
     <script src="./js/main.js"></script>
@@ -40,6 +44,5 @@
     <script src="./js/meteor.js"></script>
     <script src="./js/fuel.js"></script>
     <script src="./js/comet.js"></script>
-
-</body>
+  </body>
 </html>

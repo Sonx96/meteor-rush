@@ -4,10 +4,10 @@ class Comet {
     this.node.src = "./images/comet.png";
     gameBoxNode.append(this.node);
 
-    this.x = -150; //posicion eje X
-    this.y = Math.floor(Math.random() * 320); //posicion eje Y
-    this.w = 80; //ancho
-    this.h = 25; //alto
+    this.x = -150;
+    this.y = Math.floor(Math.random() * 320);
+    this.w = 80;
+    this.h = 25;
 
     this.cometSpeed = 2;
 
