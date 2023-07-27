@@ -141,7 +141,7 @@ class Game {
 
     this.collisionNaveFuel();
 
-    if (this.fuelCount === 3) {
+    if (this.fuelCount === 5) {
       this.gameWin();
     }
 
