@@ -8,6 +8,7 @@ const gameScreenNode = document.querySelector("#game-screen");
 const gameBoxNode = document.querySelector("#game-box");
 const gameoverScreenNode = document.querySelector("#gameover-screen");
 const gamewinScreenNode = document.querySelector("#gamewin-screen");
+const fuelCounterNode = document.querySelector("#fuel-counter");
 
 let gameObj = null;
 
@@ -40,6 +41,8 @@ function homeScreen() {
   gamewinScreenNode.style.display = "none";
   startScreenNode.style.display = "flex";
 }
+
+
 
 // * ADD EVENT LISTENERS
 

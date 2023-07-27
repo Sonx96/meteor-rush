@@ -4,8 +4,7 @@ class Meteor {
     this.node.src = "./images/meteor.png";
     gameBoxNode.append(this.node);
 
-    // propiedades meteor
-    this.x = Math.floor(Math.random() * 550);
+    this.x = Math.floor(Math.random() * 540);
     this.y = -100;
     this.w = 80;
     this.h = 80;
@@ -19,7 +18,6 @@ class Meteor {
     this.node.style.left = `${this.x}px`;
   }
 
-  //metodos meteor
   automaticMeteorMov = () => {
     this.y += this.meteorSpeed;
     this.positionMeteorUpdate();

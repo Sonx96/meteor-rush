@@ -4,6 +4,7 @@ class Game {
 
     this.meteorArr = [];
     this.fuelArr = [];
+    this.cometArr = [];
     this.fuelCount = 0;
 
     this.frames = 2;
@@ -25,12 +26,12 @@ class Game {
   };
 
   collisionNaveMeteor = () => {
-    this.meteorArr.forEach((cadaMeteor) => {
+    this.meteorArr.forEach((eachMeteor) => {
       if (
-        this.nave.x < cadaMeteor.x - 15 + cadaMeteor.w &&
-        this.nave.x + this.nave.w > cadaMeteor.x &&
-        this.nave.y < cadaMeteor.y - 20 + cadaMeteor.h &&
-        this.nave.h + this.nave.y > cadaMeteor.y
+        this.nave.x < eachMeteor.x + eachMeteor.w &&
+        this.nave.x + this.nave.w > eachMeteor.x &&
+        this.nave.y < eachMeteor.y + eachMeteor.h &&
+        this.nave.h + this.nave.y > eachMeteor.y
       ) {
         this.gameOver();
       }
@@ -52,17 +53,49 @@ class Game {
   };
 
   collisionNaveFuel = () => {
-    this.fuelArr.forEach((cadaFuel) => {
+    this.fuelArr.forEach((eachFuel) => {
       if (
-        this.nave.x < cadaFuel.x + cadaFuel.w &&
-        this.nave.x + this.nave.w > cadaFuel.x &&
-        this.nave.y < cadaFuel.y + cadaFuel.h &&
-        this.nave.h + this.nave.y > cadaFuel.y
+        this.nave.x < eachFuel.x + eachFuel.w &&
+        this.nave.x + this.nave.w > eachFuel.x &&
+        this.nave.y < eachFuel.y + eachFuel.h &&
+        this.nave.h + this.nave.y > eachFuel.y
       ) {
         this.fuelCount++;
         console.log(this.fuelCount);
+        this.updateFuelCounter();
         this.fuelArr[0].node.remove();
         this.fuelArr.shift();
+      }
+    });
+  };
+
+  updateFuelCounter = () => {
+    fuelCounterNode.textContent = `Fuel: ${this.fuelCount}`;
+  }
+
+  cometSpawn = () => {
+    if (this.cometArr.length === 0) {
+      let newComet = new Comet();
+      this.cometArr.push(newComet);
+    }
+  };
+
+  cometDelete = () => {
+    if (this.cometArr[0].x > 760) {
+      this.cometArr[0].node.remove();
+      this.cometArr.shift();
+    }
+  };
+
+  collisionNaveComet = () => {
+    this.cometArr.forEach((eachComet) => {
+      if (
+        this.nave.x < eachComet.x + eachComet.w &&
+        this.nave.x + this.nave.w > eachComet.x &&
+        this.nave.y < eachComet.y + eachComet.h &&
+        this.nave.h + this.nave.y > eachComet.y
+      ) {
+        this.gameOver();
       }
     });
   };
@@ -72,6 +105,8 @@ class Game {
     gameScreenNode.style.display = "none";
     gamewinScreenNode.style.display = "flex";
     gameBoxNode.innerHTML = "";
+    this.fuelCount = 0;
+    this.updateFuelCounter();
   };
 
   gameOver = () => {
@@ -79,6 +114,8 @@ class Game {
     gameScreenNode.style.display = "none";
     gameoverScreenNode.style.display = "flex";
     gameBoxNode.innerHTML = "";
+    this.fuelCount = 0;
+    this.updateFuelCounter();
   };
 
   gameLoop = () => {
@@ -104,9 +141,19 @@ class Game {
 
     this.collisionNaveFuel();
 
-    if (this.fuelCount === 3) {
+    if (this.fuelCount === 10) {
       this.gameWin();
     }
+
+    this.cometSpawn();
+
+    this.cometArr.forEach((eachComet) => {
+      eachComet.automaticFuelMov();
+    })
+
+    this.cometDelete();
+
+    this.collisionNaveComet();
 
     if (this.isGameOn === true) {
       requestAnimationFrame(this.gameLoop);
