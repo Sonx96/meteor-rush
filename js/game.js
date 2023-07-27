@@ -45,7 +45,7 @@ class Game {
   };
 
   fuelDelete = () => {
-    if (this.fuelArr[0].y > 650) {
+    if (this.fuelArr[0].y > 450) {
       this.fuelArr[0].node.remove();
       this.fuelArr.shift();
     }
@@ -65,6 +65,13 @@ class Game {
         this.fuelArr.shift();
       }
     });
+  };
+
+  gameWin = () => {
+    this.isGameOn = false;
+    gameScreenNode.style.display = "none";
+    gamewinScreenNode.style.display = "flex";
+    gameBoxNode.innerHTML = "";
   };
 
   gameOver = () => {
@@ -96,6 +103,10 @@ class Game {
     this.fuelDelete();
 
     this.collisionNaveFuel();
+
+    if (this.fuelCount === 3) {
+      this.gameWin();
+    }
 
     if (this.isGameOn === true) {
       requestAnimationFrame(this.gameLoop);

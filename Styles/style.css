@@ -1,9 +1,9 @@
 body {
     margin: 0;
-    background-color: lightgray;
+    background-color: rgb(4, 4, 48);
   }
 
-#start-btn, #restart-btn {
+#start-btn, #restart-btn, #home-btn {
     background-color: blueviolet;
     color:blue;
     padding: 20px;
@@ -34,6 +34,6 @@ body {
     background-size: cover;
 }
 
-#game-screen, #gameover-screen {
+#game-screen, #gameover-screen, #gamewin-screen {
     display: none;
 }
