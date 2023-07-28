@@ -148,7 +148,7 @@ class Game {
     this.cometSpawn();
 
     this.cometArr.forEach((eachComet) => {
-      eachComet.automaticFuelMov();
+      eachComet.automaticCometMov();
     });
 
     this.cometDelete();

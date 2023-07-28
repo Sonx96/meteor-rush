@@ -18,7 +18,7 @@ class Comet {
     this.node.style.left = `${this.x}px`;
   }
 
-  automaticFuelMov = () => {
+  automaticCometMov = () => {
     this.x += this.cometSpeed;
     this.positionCometUpdate();
   };
